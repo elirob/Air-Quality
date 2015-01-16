@@ -1,6 +1,6 @@
 Py-NAS
 
-Py-NAS is a python module which reads and cleans .NAS files. The data is presented on both a time-series graph and a map showing the change in PM10 values.  
+Py-NAS is a functions library which carries out analysis on air quality. Including reading and cleaning .NAS files. Presenting data both graphically as a time-series graph and histogram. Displays a map showing the change in PM10 through time. 
 
 Data can be found at:
 <a href="http://ebas.nilu.no/">http://ebas.nilu.no/</a> <br></br>
