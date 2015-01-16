@@ -8,7 +8,7 @@ import pandas as pd
 
 
 def filename_unpack(filename):
-    '''Reads a .NAS filename and returns the start date, duration, 
+    '''Reads a .NAS filename, splits it and returns the start date, duration, 
     frequency and component '''
     list_of_values = filename.split('.')
     start_date = list_of_values[1]
@@ -19,7 +19,7 @@ def filename_unpack(filename):
 
 
 def read_nas(filepath):
-    '''Reads a file and returns the lat/long, and raw data'''
+    '''Reads a .NAS file, splits it and returns the lat/long and raw data'''
     with open(filepath, 'rt') as opened_file:
         opened_lines = opened_file.readlines()
     
@@ -27,6 +27,7 @@ def read_nas(filepath):
     name = (split_line[1])
     name = name[:-2]
 
+	# Empty list is created to store the lat and long.
     latlon_ = []
     for line in opened_lines[31:33]:
         split_line = re.split(r': *',line)
@@ -35,7 +36,8 @@ def read_nas(filepath):
         latlon_.append(float(split_line[1][:-2]))
 
     lat, lon = latlon_
-    
+ 
+	# Creates empty lists to store the start date, end date, data and data flags in.
     start_index = []
     end_index = []
     data = []
@@ -49,6 +51,7 @@ def read_nas(filepath):
         data.append(float(split_line[2]))
         data_flag.append(float(split_line[3][:-2]))
         
+	# Stores the values in a dictionary	
     return({'lat':lat,'lon':lon,'station_name':name,
             'start_index':start_index,'end_index':end_index,
             'data':data,'data_flag':data_flag})
