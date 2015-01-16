@@ -27,6 +27,10 @@ def read_nas(filepath):
     split_line = re.split(r': *',opened_lines[30])
     name = (split_line[1])
     name = name[:-2]
+    
+    split_line = re.split(r': *',opened_lines[36])
+    units = split_line[1]
+    units = units[:-2]
 
 	# Empty list is created to store the lat and long.
     latlon_ = []
@@ -52,10 +56,12 @@ def read_nas(filepath):
         data.append(float(split_line[2]))
         data_flag.append(float(split_line[3][:-2]))
         
+
 	# Stores the values in a dictionary	
     return({'lat':lat,'lon':lon,'station_name':name,
             'start_index':start_index,'end_index':end_index,
-            'data':data,'data_flag':data_flag})
+            'data':data,'data_flag':data_flag,
+            'units':units})
 
 def read_and_clean(filepath):
     """ Reads a .nas file, given as the function argument and returns a dictionary
