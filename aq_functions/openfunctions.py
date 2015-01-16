@@ -1,18 +1,20 @@
 #this is a python script for opening .NAS files
 
+import re
+
 def filename_unpack(filename):
-'''Reads a .NAS filename and returns the start date, duration, 
-frequency and component '''
+    '''Reads a .NAS filename and returns the start date, duration, 
+    frequency and component '''
     list_of_values = filename.split('.')
     start_date = list_of_values[1]
     duration = list_of_values[6]
     frequency = list_of_values[7]
     component = list_of_values[4]
-return(start_date, duration, frequency, component)
+    return(start_date, duration, frequency, component)
 
 
 def read_nas(filepath):
-'''Reads a file and returns the lat/long, and raw data'''
+    '''Reads a file and returns the lat/long, and raw data'''
     with open(filepath, 'rt') as opened_file:
         opened_lines = opened_file.readlines()
     
