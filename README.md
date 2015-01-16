@@ -6,11 +6,11 @@ Data can be found at:
 <a href="http://ebas.nilu.no/">http://ebas.nilu.no/</a> <br></br>
 
 Dependencies: <br></br>
+matplotlib<br></br>
 numpy<br></br>
 <a href="https://docs.python.org/2/library/re.html">re</a> <br></br>
 <a href="https://docs.python.org/2/library/datetime.html">datetime</a> <br></br>
 os <br></br>
 <a href="http://pandas.pydata.org/">pandas</a><br></br>
 <a href="http://www.numpy.org/>">numpy</a> <br></br>
-matplotlib<br></br>
 
