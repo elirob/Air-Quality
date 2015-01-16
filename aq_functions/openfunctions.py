@@ -10,7 +10,7 @@ import pandas as pd
 def filename_unpack(filename):
     '''Reads a .NAS filename, splits it and returns the start date, duration, 
     frequency and component '''
-    assert filename[:-4] == '.nas', This is not a .nas file
+    assert filename[-4:] == '.nas', "This is not a .nas file"
     list_of_values = filename.split('.')
     start_date = list_of_values[1]
     duration = list_of_values[6]
